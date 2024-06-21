@@ -10,18 +10,17 @@ import static com.codeborne.selenide.Selenide.*;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class JUnit5CodeAvailable {
+public class JUnit5CodeAvailableTest {
 
     @BeforeAll
-    static void beforeAll() {
+    static void setUp() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://github.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
     }
 
     @AfterEach
-    void afterEach(){
+    void tearDown(){
         closeWebDriver();
     }
     @Test
